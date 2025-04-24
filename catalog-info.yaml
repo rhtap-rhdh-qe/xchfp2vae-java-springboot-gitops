@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: xchfp2vae-java-springboot-gitops
+  description: This is GitOps manifest for xchfp2vae-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=xchfp2vae-java-springboot
+    backstage.io/kubernetes-id: xchfp2vae-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: xchfp2vae-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:xchfp2vae-java-springboot
